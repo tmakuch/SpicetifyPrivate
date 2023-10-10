@@ -1,0 +1,126 @@
+/*==== VARS ====*/
+:root {
+    --player-height: 104px;
+
+    --button-dim: 64px;
+    --button-secondary-dim: 48px;
+    --button-content-size: 32px;
+
+    --title-font-size: 20px;
+    --artist-font-size: 15px;
+}
+
+/*==== NAVBAR ====*/
+.main-yourLibraryX-navItems {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .main-yourLibraryX-navItem {
+        flex-grow: 1;
+    }
+
+    .main-yourLibraryX-navLink {
+        > * {
+            margin: 0 auto;
+        }
+        > span {
+            display: none;
+        }
+    }
+}
+
+/*==== PLAYER ====*/
+.main-nowPlayingBar-container {
+    height: auto;
+    flex-direction: column-reverse;
+}
+
+.main-nowPlayingBar-nowPlayingBar {
+    height: var(--player-height);
+}
+
+.main-nowPlayingWidget-nowPlaying {
+    .cover-art {
+        height: var(--button-dim) !important;
+        width: var(--button-dim) !important;
+    }
+    .main-trackInfo-name {
+        font-size: var(--title-font-size);
+    }
+    .main-trackInfo-artists {
+        font-size: var(--artist-font-size);
+    }
+    .control-button-heart {
+        height: var(--button-dim);
+        width: var(--button-dim);
+
+        > span > svg {
+            height: var(--button-content-size);
+            width: var(--button-content-size);
+        }
+    }
+}
+
+.player-controls {
+    .main-shuffleButton-button, .main-skipBackButton-button, .main-playPauseButton-button, .main-skipForwardButton-button, .main-repeatButton-button {
+        height: var(--button-dim);
+        width: var(--button-dim);
+
+        > svg {
+            height: var(--button-content-size);
+            width: var(--button-content-size);
+        }
+    }
+    .playback-bar__progress-time-elapsed, .main-playbackBarRemainingTime-container {
+        font-size: 1rem;
+    }
+}
+/*==== EXTRA ====*/
+.main-nowPlayingBar-extraControls {
+    padding-bottom: calc(var(--button-secondary-dim) - 10px);
+    position: relative;
+
+    .main-genericButton-button {
+        height: var(--button-secondary-dim);
+        width: var(--button-secondary-dim);
+
+        > span > svg {
+            height: var(--button-content-size) !important;
+            width: var(--button-content-size) !important;
+        }
+    }
+    .main-devicePicker-controlButton {
+        height: var(--button-secondary-dim);
+        width: var(--button-secondary-dim);
+
+        > svg {
+            height: var(--button-content-size) !important;
+            width: var(--button-content-size) !important;
+        }
+    }
+    .main-devicePicker-indicator {
+        bottom: unset;
+        border-bottom: unset;
+        top: -10px;
+        border-top: 10px solid var(--background-base);
+    }
+    .main-nowPlayingBar-volumeBar {
+        position: absolute;
+        top: calc(var(--button-secondary-dim) + 10px);
+        right: 10px;
+        width: calc(var(--button-secondary-dim) * 5 - 25px);
+    }
+}
+
+/*==== QUEUE ====*/
+.queue-queuePage-header {
+    display: none;
+}
+
+.queue-queuePage-subHeader {
+    margin-top: unset;
+}
+
+.queue-queuePage-queuePage {
+    margin-top: 10px;
+}
