@@ -73,6 +73,13 @@
     }
 }
 
+/*==== TOPBAR ====*/
+.main-topBar-container {
+    .main-entityHeader-topbarTitle {
+        padding-left: 15px;
+    }
+}
+
 /*==== FOOTER ====*/
 .main-nowPlayingBar-container {
     height: auto;
