@@ -89,7 +89,7 @@
 .main-nowPlayingBar-nowPlayingBar {
     height: var(--player-height);
     display: grid;
-    grid-template: 1fr / 5fr 3fr;
+    grid-template: "extra-controls main-controls" 1fr / auto 1fr;
     justify-items: center;
 }
 
@@ -103,6 +103,7 @@
     width: unset;
     max-width: unset;
     justify-self: stretch;
+    grid-area: main-controls;
 
     .main-shuffleButton-button, .main-skipBackButton-button, .main-playPauseButton-button, .main-skipForwardButton-button, .main-repeatButton-button {
         height: var(--button-dim);
@@ -119,13 +120,13 @@
 }
 /*==== EXTRA CONTROLS ====*/
 .main-nowPlayingBar-right {
-    flex-grow: 1;
+    grid-area: extra-controls;
     flex-flow: column nowrap;
     align-items: center;
 }
 .main-nowPlayingBar-extraControls {
     
-    padding-bottom: calc(var(--button-secondary-dim) - 10px);
+    padding-bottom: calc(var(--button-secondary-dim) - 20px);
     position: relative;
 
     .main-genericButton-button {
