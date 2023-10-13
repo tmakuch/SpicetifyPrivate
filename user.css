@@ -73,8 +73,38 @@
     }
 }
 
+/*==== MAIN VIEW ====*/
+.Root__main-view {
+    .main-entityHeader-nonWrapped {
+        display: none;
+
+        ~ .os-host {
+            padding-top: 50px;
+        }
+    }
+
+    .playlist-playlist-searchBoxContainer {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .playlist-playlist-playlistContent .main-actionBarBackground-background + .os-host {
+        padding-top: 50px;
+    }
+
+    .main-actionBar-ActionBar {
+        padding-left: 30px;
+    }
+
+    .main-playButton-PlayButton {
+        display: none;
+    }
+}
+
 /*==== TOPBAR ====*/
 .main-topBar-container {
+    margin-top: 6px;
+
     .main-entityHeader-topbarTitle {
         padding-left: 15px;
     }
