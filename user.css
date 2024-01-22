@@ -1,13 +1,15 @@
 /*==== VARS ====*/
 :root {
-    --player-height: 104px;
+    --player-height: 136px;
 
-    --button-dim: 64px;
-    --button-secondary-dim: 48px;
-    --button-content-size: 32px;
+    --button-dim: 96px;
+    --button-secondary-dim: 80px;
+    --button-content-size: 64px;
 
     --title-font-size: 20px;
     --artist-font-size: 15px;
+
+    --background-base: black;
 }
 
 /*==== CUSTOM FOLDER IMAGES ====*/
@@ -54,7 +56,6 @@
 .main-yourLibraryX-navItems {
     display: flex;
     flex-flow: row wrap;
-    height: calc(var(--button-secondary-dim) * 2);
 
     .main-yourLibraryX-navItem {
         flex-grow: 1;
@@ -103,7 +104,7 @@
 
 /*==== TOPBAR ====*/
 .main-topBar-container {
-    margin-top: 6px;
+    margin-top: 0;
 
     .main-entityHeader-topbarTitle {
         padding-left: 15px;
@@ -119,7 +120,7 @@
 .main-nowPlayingBar-nowPlayingBar {
     height: var(--player-height);
     display: grid;
-    grid-template: "extra-controls main-controls" 1fr / 250px 1fr;
+    grid-template: "extra-controls main-controls" 1fr / calc(var(--button-secondary-dim)*5) 1fr;
     justify-items: center;
 }
 
@@ -135,11 +136,12 @@
     justify-self: stretch;
     grid-area: main-controls;
 
-    .main-shuffleButton-button, .main-skipBackButton-button, .main-playPauseButton-button, .main-skipForwardButton-button, .main-repeatButton-button {
+    .player-controls__left > [data-encore-id="popoverTrigger"] button, .main-skipBackButton-button, .main-playPauseButton-button, .main-skipForwardButton-button, .main-repeatButton-button {
         height: var(--button-dim);
         width: var(--button-dim);
+        --button-size: var(--button-content-size) !important;
 
-        > svg {
+        svg {
             height: var(--button-content-size);
             width: var(--button-content-size);
         }
@@ -158,7 +160,7 @@
     position: relative;
 }
 .main-nowPlayingBar-extraControls {
-    padding-bottom: calc(var(--button-secondary-dim) - 20px);
+    padding-bottom: calc(var(--button-secondary-dim) - 52px);
 
     .main-genericButton-button {
         height: var(--button-secondary-dim);
@@ -208,6 +210,7 @@
 /*==== PLAYING NOW SIDEBAR ====*/
 .main-buddyFeed-content {
     position: relative;
+    padding-top: 0;
 
     .main-buddyFeed-header {
         position: absolute;
@@ -224,6 +227,14 @@
     }
     .main-nowPlayingView-queue {
         display: none;
+    }
+
+    .main-nowPlayingView-coverArtContainer + :not(.main-nowPlayingView-contextItemInfo) {
+        /*switch to video / switch to music only*/
+        margin-top: -56px;
+        > * {
+            background: black;
+        }
     }
 
     .main-nowPlayingView-contextItemInfo {
