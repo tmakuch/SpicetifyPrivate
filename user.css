@@ -171,11 +171,11 @@
             width: var(--button-content-size) !important;
         }
     }
-    .main-devicePicker-controlButton {
+    .main-devicePicker-button {
         height: var(--button-secondary-dim);
         width: var(--button-secondary-dim);
 
-        > svg {
+        svg {
             height: var(--button-content-size) !important;
             width: var(--button-content-size) !important;
         }
